@@ -4,20 +4,26 @@
 
 %hook NCNotificationDispatcher
 
+BOOL enabled = NO;
+
 -(void)postNotificationWithRequest:(NCNotificationRequest*)arg1 {
 
 	if ([[arg1 sectionIdentifier] isEqualToString:@"com.apple.shortcuts"]) {
-		return;
+        if (enabled) {
+		    return;
+        }
 	} 
 	%orig;
 }
 %end
 
-%ctor {
-    @autoreleasepool {     
-        NSString *application = [NSBundle mainBundle].bundleIdentifier;
-        if ([application isEqualToString:@"com.apple.springboard"]) {
-            %init;
-        }
-    }
+BOOL tweakEnabled() {
+    NSDictionary *settings = [NSMutableDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.itsjafer.stopshortcutsnotifications.plist"];
+    return settings[@"enabled"] ? [settings[@"enabled"] boolValue] : NO;
+}
+
+%ctor {   
+    enabled = tweakEnabled();
+    NSString *application = [NSBundle mainBundle].bundleIdentifier;
+    %init;
 }

@@ -5,5 +5,6 @@ StopShortcutsNotifications_FILES = Tweak.x
 StopShortcutsNotifications_CFLAGS = -fobjc-arc
 StopShortcutsNotitications_FRAMEWORKS = UIKit
 
-
 include $(THEOS_MAKE_PATH)/tweak.mk
+SUBPROJECTS += stopshortcutsnotifications
+include $(THEOS_MAKE_PATH)/aggregate.mk
