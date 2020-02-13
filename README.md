@@ -6,3 +6,7 @@ This tweak, written in Objective-C, stops the 'Shortcuts' app from sending any a
 
 We hook on to the Notification Dispatcher class -- specifically the `postNotificationWithRequest` method. This method is called by every notification that needs to get posted and so we hook onto it and make sure we return nothing from it if the 'Shortcuts' app calls it.
 
+## Copyright
+
+GNU GENERAL PUBLIC LICENSE (feel free to use the code, just keep it open source)
+
