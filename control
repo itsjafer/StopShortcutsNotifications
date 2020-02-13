@@ -1,9 +1,9 @@
-Package: com.itsjafer.stopshortcutnotifications
-Name: StopShortcutNotifications
+Package: com.itsjafer.stopshortcutsnotifications
+Name: StopShortcutsNotifications
 Depends: mobilesubstrate
 Version: 0.0.1
 Architecture: iphoneos-arm
-Description: An awesome MobileSubstrate tweak!
-Maintainer: itsjafer
-Author: itsjafer
+Description: Stops all shortcuts notifications from being pushed.
+Maintainer: itsjafer <itsjafer@gmail.com>
+Author: itsjafer <itsjafer@gmail.com>
 Section: Tweaks
