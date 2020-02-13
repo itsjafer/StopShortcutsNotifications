@@ -1,9 +1,9 @@
 include $(THEOS)/makefiles/common.mk
-TWEAK_NAME = StopShortcutNotifications
+TWEAK_NAME = StopShortcutsNotifications
 
-StopShortcutNotifications_FILES = Tweak.x
-StopShortcutNotifications_CFLAGS = -fobjc-arc
-StopShortcutNotitications_FRAMEWORKS = UIKit
+StopShortcutsNotifications_FILES = Tweak.x
+StopShortcutsNotifications_CFLAGS = -fobjc-arc
+StopShortcutsNotitications_FRAMEWORKS = UIKit
 
 
 include $(THEOS_MAKE_PATH)/tweak.mk
