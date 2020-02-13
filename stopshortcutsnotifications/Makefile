@@ -2,7 +2,7 @@ include $(THEOS)/makefiles/common.mk
 
 BUNDLE_NAME = stopshortcutsnotifications
 DEBUG = 0
-stopshortcutsnotifications_FILES = SSNRootListController.m
+stopshortcutsnotifications_FILES = SSNRootListController.mm
 stopshortcutsnotifications_INSTALL_PATH = /Library/PreferenceBundles
 stopshortcutsnotifications_FRAMEWORKS = UIKit
 stopshortcutsnotifications_PRIVATE_FRAMEWORKS = Preferences
