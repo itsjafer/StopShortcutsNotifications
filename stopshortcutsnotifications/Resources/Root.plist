@@ -23,6 +23,18 @@
 			<string>Enabled</string>
 		</dict>
 		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.itsjafer.stopshortcutsnotifications</string>
+			<key>key</key>
+			<string>filter</string>
+			<key>label</key>
+			<string>Only filter automations</string>
+		</dict>
+		<dict>
 			<key>action</key>
 			<string>respring:</string>
 			<key>cell</key>
