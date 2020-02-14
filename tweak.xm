@@ -1,15 +1,7 @@
 #include "tweak.h"
+#import <Cephei/HBPreferences.h>
 
-static BOOL enabled = YES;
-
-static BOOL tweakEnabled() {
-    NSDictionary *settings = [NSMutableDictionary dictionaryWithContentsOfFile:
-        @"/var/mobile/Library/Preferences/com.itsjafer.stopshortcutsnotifications.plist"];
-
-    // we're defaulting to true but this might need to be changed if users
-    // find it annoying
-    return settings[@"enabled"] ? [settings[@"enabled"] boolValue] : YES; 
-}
+static BOOL enabled;
 
 %hook NCNotificationDispatcher
 
@@ -29,6 +21,7 @@ static BOOL tweakEnabled() {
 %end
 
 %ctor {   
-    enabled = tweakEnabled();
+	HBPreferences *prefs = [[HBPreferences alloc] initWithIdentifier:@"com.itsjafer.stopshortcutsnotifications"];
+	[prefs registerBool:&enabled default:YES forKey:@"enabled"];
     %init;
 }
