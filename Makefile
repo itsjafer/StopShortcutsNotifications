@@ -1,3 +1,5 @@
+ARCHS = arm64e arm64 armv7
+
 include $(THEOS)/makefiles/common.mk
 TWEAK_NAME = StopShortcutsNotifications
 
